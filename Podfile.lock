@@ -1,0 +1,32 @@
+PODS:
+  - DropDown (2.3.13)
+  - GearRefreshControl (1.0.1)
+  - Highlighter (1.4.0)
+  - IQKeyboardManagerSwift (6.5.4)
+  - youtube-ios-player-helper (1.0.2)
+
+DEPENDENCIES:
+  - DropDown
+  - GearRefreshControl (~> 1.0.0)
+  - Highlighter
+  - IQKeyboardManagerSwift (= 6.5.4)
+  - youtube-ios-player-helper
+
+SPEC REPOS:
+  trunk:
+    - DropDown
+    - GearRefreshControl
+    - Highlighter
+    - IQKeyboardManagerSwift
+    - youtube-ios-player-helper
+
+SPEC CHECKSUMS:
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  GearRefreshControl: f1d4cf97b6440bbd47d6a8a32fe2aaddd6d1e3cb
+  Highlighter: 42eb22960be4d3358c42122b3768ac77b9ae0967
+  IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
+  youtube-ios-player-helper: 40b96e52c22445f0fdc43731cefa32c67075ff81
+
+PODFILE CHECKSUM: d6b9a11bd30e37c72f8ecbfba5f483d0bd185011
+
+COCOAPODS: 1.9.1
