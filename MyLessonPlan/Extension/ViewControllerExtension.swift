@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ShimmerSwift
 
 extension UIViewController{
     var sdGap:CGFloat{ return 7 }
@@ -165,13 +166,20 @@ extension UIViewController{
         return pdfButton
     }
     func addAndGetContinueButton(title t:String) -> UIButton{
+        let shimmerContinueButton = ShimmeringView()
+        self.view.addSubview(shimmerContinueButton)
+        shimmerContinueButton.translatesAutoresizingMaskIntoConstraints = false
+        shimmerContinueButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -sdGap).isActive = true
+        shimmerContinueButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -sdGap).isActive = true
+        shimmerContinueButton.heightAnchor.constraint(equalToConstant: sdButtonHeight).isActive = true
+        shimmerContinueButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 2/3, constant: -2*sdGap).isActive = true
         let continueButton = UIButton(type: .system)
-        self.view.addSubview(continueButton)
-        continueButton.translatesAutoresizingMaskIntoConstraints = false
-        continueButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -sdGap).isActive = true
-        continueButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -sdGap).isActive = true
-        continueButton.heightAnchor.constraint(equalToConstant: sdButtonHeight).isActive = true
-        continueButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 2/3, constant: -2*sdGap).isActive = true
+//        self.view.addSubview(continueButton)
+//        continueButton.translatesAutoresizingMaskIntoConstraints = false
+//        continueButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -sdGap).isActive = true
+//        continueButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -sdGap).isActive = true
+//        continueButton.heightAnchor.constraint(equalToConstant: sdButtonHeight).isActive = true
+//        continueButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 2/3, constant: -2*sdGap).isActive = true
         continueButton.setTitle(t, for: .normal)
         continueButton.titleLabel?.numberOfLines = 0
         continueButton.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -181,6 +189,11 @@ extension UIViewController{
         continueButton.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         continueButton.titleLabel?.font =  UIFont(name: "AppleSDGothicNeo-Bold", size: 17)
         continueButton.layer.cornerRadius = 4
+        shimmerContinueButton.contentView = continueButton
+        shimmerContinueButton.isShimmering = true
+        #if targetEnvironment(macCatalyst)
+        shimmerContinueButton.shimmerPauseDuration = 3
+        #endif
         return continueButton
     }
     func addAndGetMainTableView()->UITableView{
