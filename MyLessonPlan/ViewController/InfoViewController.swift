@@ -216,6 +216,7 @@ extension InfoViewController:UITableViewDelegate,UITableViewDataSource{
             }else if indexPath.row == 5{
                 cell.hintLabel.text = "Grade"
                 cell.textView.inputView = infoScene.picker
+                cell.textView.isAccessibilityElement = true
                 infoScene.setPickerLayout(view:self.view)
                 cell.textView.tag = 1
                 if dataFlow!.grade == ""{
@@ -241,6 +242,7 @@ extension InfoViewController:UITableViewDelegate,UITableViewDataSource{
             }else if indexPath.row == 7{
                 cell.textView.tag = 3
                 cell.hintLabel.text = "Lesson Title"
+                cell.hintLabel.isAccessibilityElement = true
                 if dataFlow!.lessonTitle == ""{
                     cell.textView.textColor = .lightGray
                     cell.textView.text = "(Required)"

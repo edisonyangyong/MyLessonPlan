@@ -40,6 +40,10 @@ class MainViewController: UIViewController{
         self.view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.title = "MainViewController"
         
+        if (ProcessInfo.processInfo.environment["UITEST_DISABLE_ANIMATIONS"] == "YES") {
+            UIView.setAnimationsEnabled(false)
+        }
+        
         #if targetEnvironment(macCatalyst)
         if !hasDisabledZoom {
             hasDisabledZoom = true
@@ -216,6 +220,7 @@ extension MainViewController:UITableViewDelegate,UITableViewDataSource{
             cell.addSubview(mainScene.newCreatView)
             let createTap = UITapGestureRecognizer(target: self, action: #selector(createButtonClicked))
             mainScene.newCreatView.addGestureRecognizer(createTap)
+            mainScene.newCreatView.isAccessibilityElement = true
             cell.addSubview(mainScene.newInspireView)
             let inspireTap = UITapGestureRecognizer(target: self, action: #selector(communityButtonClicked))
             mainScene.newInspireView.addGestureRecognizer(inspireTap)

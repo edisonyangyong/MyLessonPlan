@@ -62,6 +62,7 @@
 		1C921D022466208100C47596 /* ContentScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C921D012466208100C47596 /* ContentScene.swift */; };
 		1C921D06246685B700C47596 /* ObjectiveScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C921D05246685B700C47596 /* ObjectiveScene.swift */; };
 		1C921D08246685DD00C47596 /* ObjectiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C921D07246685DD00C47596 /* ObjectiveModel.swift */; };
+		1C93B89B24B97DAC009C0458 /* MyLessonPlanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C93B89A24B97DAC009C0458 /* MyLessonPlanUITests.swift */; };
 		1CA3D04424A9A9DA007680F7 /* InitialNamesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA3D04324A9A9DA007680F7 /* InitialNamesCollectionViewCell.swift */; };
 		1CAA9B2224B459FC00C5B715 /* ModelBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAA9B2124B459FC00C5B715 /* ModelBarView.swift */; };
 		1CD4B47E2480A877009630CA /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD4B47D2480A877009630CA /* ContentModel.swift */; };
@@ -94,6 +95,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 1C236182247E44EA00522ABD;
 			remoteInfo = AppBundle;
+		};
+		1C93B89D24B97DAC009C0458 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1C17AF91244069C7007CA52A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C17AF98244069C7007CA52A;
+			remoteInfo = MyLessonPlan;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -174,6 +182,9 @@
 		1C921D012466208100C47596 /* ContentScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentScene.swift; sourceTree = "<group>"; };
 		1C921D05246685B700C47596 /* ObjectiveScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectiveScene.swift; sourceTree = "<group>"; };
 		1C921D07246685DD00C47596 /* ObjectiveModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectiveModel.swift; sourceTree = "<group>"; };
+		1C93B89824B97DAC009C0458 /* MyLessonPlanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyLessonPlanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C93B89A24B97DAC009C0458 /* MyLessonPlanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLessonPlanUITests.swift; sourceTree = "<group>"; };
+		1C93B89C24B97DAC009C0458 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CA3D04324A9A9DA007680F7 /* InitialNamesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialNamesCollectionViewCell.swift; sourceTree = "<group>"; };
 		1CAA9B2124B459FC00C5B715 /* ModelBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelBarView.swift; sourceTree = "<group>"; };
 		1CD4B47D2480A877009630CA /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
@@ -216,6 +227,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1C93B89524B97DAC009C0458 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -249,6 +267,7 @@
 			children = (
 				1C17AF9B244069C7007CA52A /* MyLessonPlan */,
 				1C236184247E44EA00522ABD /* AppBundle */,
+				1C93B89924B97DAC009C0458 /* MyLessonPlanUITests */,
 				1C17AF9A244069C7007CA52A /* Products */,
 				4CAAAFB320A5FD959049BF32 /* Pods */,
 				5B7975490C84C225158BC1A1 /* Frameworks */,
@@ -260,6 +279,7 @@
 			children = (
 				1C17AF99244069C7007CA52A /* MyLessonPlan.app */,
 				1C236183247E44EA00522ABD /* AppBundle.bundle */,
+				1C93B89824B97DAC009C0458 /* MyLessonPlanUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -465,6 +485,15 @@
 			name = Lesson;
 			sourceTree = "<group>";
 		};
+		1C93B89924B97DAC009C0458 /* MyLessonPlanUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1C93B89A24B97DAC009C0458 /* MyLessonPlanUITests.swift */,
+				1C93B89C24B97DAC009C0458 /* Info.plist */,
+			);
+			path = MyLessonPlanUITests;
+			sourceTree = "<group>";
+		};
 		1CDCFA312491B7B200022626 /* About */ = {
 			isa = PBXGroup;
 			children = (
@@ -547,13 +576,31 @@
 			productReference = 1C236183247E44EA00522ABD /* AppBundle.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
+		1C93B89724B97DAC009C0458 /* MyLessonPlanUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C93B8A124B97DAC009C0458 /* Build configuration list for PBXNativeTarget "MyLessonPlanUITests" */;
+			buildPhases = (
+				1C93B89424B97DAC009C0458 /* Sources */,
+				1C93B89524B97DAC009C0458 /* Frameworks */,
+				1C93B89624B97DAC009C0458 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1C93B89E24B97DAC009C0458 /* PBXTargetDependency */,
+			);
+			name = MyLessonPlanUITests;
+			productName = MyLessonPlanUITests;
+			productReference = 1C93B89824B97DAC009C0458 /* MyLessonPlanUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		1C17AF91244069C7007CA52A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Edison Yang";
 				TargetAttributes = {
@@ -563,6 +610,10 @@
 					};
 					1C236182247E44EA00522ABD = {
 						CreatedOnToolsVersion = 11.5;
+					};
+					1C93B89724B97DAC009C0458 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 1C17AF98244069C7007CA52A;
 					};
 				};
 			};
@@ -581,6 +632,7 @@
 			targets = (
 				1C17AF98244069C7007CA52A /* MyLessonPlan */,
 				1C236182247E44EA00522ABD /* AppBundle */,
+				1C93B89724B97DAC009C0458 /* MyLessonPlanUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -596,6 +648,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1C236181247E44EA00522ABD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C93B89624B97DAC009C0458 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -735,6 +794,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1C93B89424B97DAC009C0458 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C93B89B24B97DAC009C0458 /* MyLessonPlanUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -743,6 +810,11 @@
 			platformFilter = maccatalyst;
 			target = 1C236182247E44EA00522ABD /* AppBundle */;
 			targetProxy = 1C23618A247E458700522ABD /* PBXContainerItemProxy */;
+		};
+		1C93B89E24B97DAC009C0458 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1C17AF98244069C7007CA52A /* MyLessonPlan */;
+			targetProxy = 1C93B89D24B97DAC009C0458 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -969,6 +1041,46 @@
 			};
 			name = Release;
 		};
+		1C93B89F24B97DAC009C0458 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5D28KMG63Q;
+				INFOPLIST_FILE = MyLessonPlanUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.edisonyangyong.MyLessonPlanUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyLessonPlan;
+			};
+			name = Debug;
+		};
+		1C93B8A024B97DAC009C0458 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5D28KMG63Q;
+				INFOPLIST_FILE = MyLessonPlanUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.edisonyangyong.MyLessonPlanUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyLessonPlan;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -995,6 +1107,15 @@
 			buildConfigurations = (
 				1C236186247E44EA00522ABD /* Debug */,
 				1C236187247E44EA00522ABD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1C93B8A124B97DAC009C0458 /* Build configuration list for PBXNativeTarget "MyLessonPlanUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C93B89F24B97DAC009C0458 /* Debug */,
+				1C93B8A024B97DAC009C0458 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

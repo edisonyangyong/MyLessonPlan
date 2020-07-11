@@ -174,6 +174,7 @@ extension ContentStandardViewController:UITableViewDelegate,UITableViewDataSourc
         let cell = UITableViewCell()
         cell.backgroundColor = UIColor.byuHlightGray
         cell.selectionStyle = .none
+        cell.isAccessibilityElement = true
         if indexPath.row == 0{
             // Road Map
             cell.addSubview(contentScene.roadMap)
@@ -242,6 +243,7 @@ extension ContentStandardViewController:UITableViewDelegate,UITableViewDataSourc
                 contentScene.standardTextView.text = "Paste the Standard Here"
             }
             contentScene.standardTextView.delegate = self
+            contentScene.standardTextView.isAccessibilityElement = true
             contentScene.setStandardTextViewLayout(height: contentScene.cellHeights[indexPath.row].height, view:self.view)
             contentScene.standardTextView.addTwoBarButtons(leftTitle: "Paste", rightTitle: "Done",target: self, leftSelector: #selector(tabPaste), rightSelector: #selector(tapDone))
             if !ContentStandardViewController.isRemindered {

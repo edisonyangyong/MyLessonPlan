@@ -20,7 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #if !targetEnvironment(macCatalyst)
             IQKeyboardManager.shared.enable = true
         #endif
-        // Override point for customization after application launch.
+        
+        // disable all animations during the ui testing process
+        if (ProcessInfo.processInfo.environment["UITEST_DISABLE_ANIMATIONS"] == "YES") {
+            print(">>>>>>>>>>>>>>>>>>> Start UI Testing")
+            UIView.setAnimationsEnabled(false)
+        }else{
+            print(">>>>>>>>>>>>>>>>>>> Normal Model")
+        }
         return true
     }
 
