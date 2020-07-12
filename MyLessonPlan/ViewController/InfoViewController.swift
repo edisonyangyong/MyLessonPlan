@@ -264,6 +264,8 @@ extension InfoViewController:UITableViewDelegate,UITableViewDataSource{
                 }
                 cell.textView.inputView = nil
                 cell.textView.addTwoBarButtons(leftTitle: "Paste", rightTitle: "Done", target: self, leftSelector: #selector(tabPaste), rightSelector: #selector(tapDone))
+                print("cell: \(cell.isAccessibilityElement)")
+                print("textview:\(cell.textView.isAccessibilityElement)")
             }
             return cell
         }

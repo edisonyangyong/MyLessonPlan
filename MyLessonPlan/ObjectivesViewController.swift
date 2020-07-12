@@ -263,6 +263,7 @@ extension ObjectivesViewController:UITableViewDelegate,UITableViewDataSource{
                 objectiveScene.questionMark.addGestureRecognizer(tapGesture)
             }else if indexPath.row == 4{
                 let row = 4
+                cell.isAccessibilityElement = false
                 // Right Verb View
                 objectiveScene.rightVerbView.frame = CGRect(x: safeLeft+3*sdGap+(self.view.frame.width-safeLeft-safeRight-5*sdGap)*3/4, y: 0, width: (self.view.frame.width-safeLeft-safeRight-5*sdGap)/4, height: objectiveScene.cellHeights[row].height)
                 cell.addSubview(objectiveScene.rightVerbView)
@@ -282,16 +283,11 @@ extension ObjectivesViewController:UITableViewDelegate,UITableViewDataSource{
                 verbTable.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
                 cell.addSubview(verbTable)
                 
-//                // Animated Swipe
-//                setAnimatedSwipe(to: verbTable, in: CGRect(x: verbTable.frame.width/2-22, y: 0, width: 44, height: 44), offset:2)
-
-//                // Animated Pointer
-//                addAnimatedIcon(to: verbTable, in: CGRect(x: verbTable.frame.width/2-22, y: verbTable.frame.height/2, width: 44, height: 44),image:#imageLiteral(resourceName: "tap"))
-                
                 // Left Outcomes View
                 leftOutcomeContentView.frame = CGRect(x: 2*sdGap+safeLeft, y: 0, width: self.view.frame.width-5*sdGap-objectiveScene.rightVerbView.frame.width-safeLeft-safeRight, height: objectiveScene.cellHeights[row].height)
                 leftOutcomeContentView.backgroundColor = UIColor.byuHlightGray
                 cell.addSubview(leftOutcomeContentView)
+//                leftOutcomeContentView.isAccessibilityElement = true
                 
                 // Animated Rect
                 if dataFlow!.learningObjectiveOne == "" && dataFlow!.learningObjectiveTwo == "" && !isRotated{
@@ -321,6 +317,7 @@ extension ObjectivesViewController:UITableViewDelegate,UITableViewDataSource{
                 }
                 
                 // Embeded ViewController
+                tabController.isAccessibilityElement = true
                 tabController.delegate = self
                 tabController.view.frame = CGRect(x: 0, y: 0, width: leftOutcomeContentView.frame.width, height: objectiveScene.cellHeights[row].height)
                 tabController.view.backgroundColor = UIColor.byuHlightGray
@@ -332,10 +329,13 @@ extension ObjectivesViewController:UITableViewDelegate,UITableViewDataSource{
                 // Tab bar
                 let item1 = UITabBarItem(title: "Objective 1", image: UIImage(named: "logo_Unselect")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), selectedImage: UIImage(named: "AppIcon"))
                 let item2 = UITabBarItem(title: "Objective 2", image: UIImage(named: "logo_Unselect")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), selectedImage: UIImage(named: "AppIcon"))
+                item1.isAccessibilityElement = true
+                item2.isAccessibilityElement = true
                 let selectedColor   =  UIColor.byuHRed
                 let unselectedColor = UIColor.byuHlightGray
                 UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: unselectedColor], for: .normal)
                 UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: selectedColor], for: .selected)
+                
 //                if isRotated || firstVC == nil{
 //                    firstVC = SubObjectiveViewController()
 //                    secondVC = SubObjectiveViewController()
@@ -343,6 +343,8 @@ extension ObjectivesViewController:UITableViewDelegate,UITableViewDataSource{
 //                }
                 firstVC = SubObjectiveViewController()
                 secondVC = SubObjectiveViewController()
+                firstVC?.isAccessibilityElement = true
+                secondVC?.isAccessibilityElement = true
                 firstVC!.delegate = self
                 secondVC!.delegate = self
                 firstVC!.tabBarItem = item1

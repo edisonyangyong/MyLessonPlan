@@ -93,6 +93,7 @@ class SubObjectiveViewController: UIViewController {
         textViewWhat.text = "insert \"what\" "
         textViewWhat.tag = 1
         self.view.addSubview(textViewWhat)
+        textViewWhat.isAccessibilityElement = true
 
         // How well
         let titleHowWell = UILabel()
@@ -113,6 +114,7 @@ class SubObjectiveViewController: UIViewController {
         textViewHow.text = "insert \"How well\""
         textViewHow.tag = 2
         self.view.addSubview(textViewHow)
+        textViewHow.isAccessibilityElement = true
         
         // Complete Objective
         let titleComplete = UILabel()
@@ -136,9 +138,9 @@ class SubObjectiveViewController: UIViewController {
         textViewEnd.delegate = self
         textViewEnd.textAlignment = .left
         textViewEnd.font = UIFont(name: "AppleSDGothicNeo-Regular", size: sdFontSize)
-       
         textViewEnd.tag = 3
         self.view.addSubview(textViewEnd)
+        textViewEnd.isAccessibilityElement = true
         
         // Side Bar
         sideBarView.backgroundColor = UIColor.byuHlightGray

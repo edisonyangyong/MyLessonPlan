@@ -39,6 +39,8 @@ class SummativeScene: UIView {
     var textView:UITextView = {
         let textView = UITextView()
         textView.textAlignment = .justified
+        textView.isAccessibilityElement = true
+        textView.accessibilityIdentifier = "SummativeTextView"
         textView.backgroundColor = UIColor.sdTextFieldColor()
         return textView
     }()

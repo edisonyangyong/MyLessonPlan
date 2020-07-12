@@ -173,8 +173,9 @@ extension SummativeViewController:UITableViewDelegate,UITableViewDataSource{
             summativeScene.questionMark.addGestureRecognizer(tapGesture)
         }else if indexPath.row == 4{
             let row = 4
-            // textView
             cell.addSubview(summativeScene.textView)
+            summativeScene.textView.isAccessibilityElement = true
+            // textView
             summativeScene.textView.delegate = self
             summativeScene.setTextViewLayout(height:summativeScene.cellHeights[row].height, view:self.view)
             if dataFlow?.summativeAssessment != ""{
