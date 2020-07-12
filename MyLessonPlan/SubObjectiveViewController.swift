@@ -94,6 +94,7 @@ class SubObjectiveViewController: UIViewController {
         textViewWhat.tag = 1
         self.view.addSubview(textViewWhat)
         textViewWhat.isAccessibilityElement = true
+        textViewWhat.accessibilityIdentifier = "whatTextView"
 
         // How well
         let titleHowWell = UILabel()
@@ -115,6 +116,7 @@ class SubObjectiveViewController: UIViewController {
         textViewHow.tag = 2
         self.view.addSubview(textViewHow)
         textViewHow.isAccessibilityElement = true
+        textViewHow.accessibilityIdentifier = "howTextView"
         
         // Complete Objective
         let titleComplete = UILabel()
@@ -141,6 +143,7 @@ class SubObjectiveViewController: UIViewController {
         textViewEnd.tag = 3
         self.view.addSubview(textViewEnd)
         textViewEnd.isAccessibilityElement = true
+        textViewEnd.accessibilityIdentifier = "endTextView"
         
         // Side Bar
         sideBarView.backgroundColor = UIColor.byuHlightGray

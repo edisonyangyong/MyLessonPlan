@@ -72,36 +72,32 @@ class MyLessonPlanUITests: XCTestCase {
 //        app/*@START_MENU_TOKEN@*/.staticTexts["Save and Continue to Content Standard →"]/*[[".buttons[\"Save and Continue to Content Standard →\"].staticTexts[\"Save and Continue to Content Standard →\"]",".staticTexts[\"Save and Continue to Content Standard →\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         
         app/*@START_MENU_TOKEN@*/.staticTexts["Save and Continue to Learning Objectives →"]/*[[".buttons[\"Save and Continue to Learning Objectives →\"].staticTexts[\"Save and Continue to Learning Objectives →\"]",".staticTexts[\"Save and Continue to Learning Objectives →\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        let tablesQuery = app.tables
-        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Tip: Pick a Specific Verb to Make\nYour Learning Objective Measureable"]/*[[".cells.staticTexts[\"Tip: Pick a Specific Verb to Make\\nYour Learning Objective Measureable\"]",".staticTexts[\"Tip: Pick a Specific Verb to Make\\nYour Learning Objective Measureable\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeUp()
-        tablesQuery/*@START_MENU_TOKEN@*/.tables.staticTexts["Contrast"]/*[[".cells.tables",".cells.staticTexts[\"Contrast\"]",".staticTexts[\"Contrast\"]",".tables"],[[[-1,3,1],[-1,0,1]],[[-1,2],[-1,1]]],[0,0]]@END_MENU_TOKEN@*/.swipeUp()
-        tablesQuery.tables.staticTexts["Prioritize"].tap()
-        let what1 = tablesQuery.cells.containing(.button, identifier:"Objective 1").children(matching: .textView).element(boundBy: 0)
-        what1.tap()
-        what1.typeText("Sample Objective 1 what statement")
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Tip: Pick a Specific Verb to Make\nYour Learning Objective Measureable"]/*[[".cells.staticTexts[\"Tip: Pick a Specific Verb to Make\\nYour Learning Objective Measureable\"]",".staticTexts[\"Tip: Pick a Specific Verb to Make\\nYour Learning Objective Measureable\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeUp()
+        app.tables/*@START_MENU_TOKEN@*/.tables.staticTexts["Contrast"]/*[[".cells.tables",".cells.staticTexts[\"Contrast\"]",".staticTexts[\"Contrast\"]",".tables"],[[[-1,3,1],[-1,0,1]],[[-1,2],[-1,1]]],[0,0]]@END_MENU_TOKEN@*/.swipeUp()
+        app.tables.tables.staticTexts["Prioritize"].tap()
+        let whatTextView = app.tables/*@START_MENU_TOKEN@*/.textViews["whatTextView"]/*[[".cells.textViews[\"whatTextView\"]",".textViews[\"whatTextView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        whatTextView.tap()
+        whatTextView.typeText("Sample Objective 1 What Statement")
         app.toolbars["Toolbar"].buttons["Done"].tap()
-        let how1 = tablesQuery.cells.containing(.button, identifier:"Objective 1").children(matching: .textView).element(boundBy: 1)
-        how1.tap()
-        how1.typeText("Sample Objective 1 how statement")
-         app.toolbars["Toolbar"].buttons["Done"].tap()
-        let end1 = tablesQuery.cells.containing(.button, identifier:"Objective 1").children(matching: .textView).element(boundBy: 2)
-        end1.tap()
-        end1.typeText("Sample Objective 1 additional statement")
+        let howTextView = app.tables.textViews["howTextView"]
+        howTextView.tap()
+        howTextView.typeText("Sample Objective 1 How Statement")
         app.toolbars["Toolbar"].buttons["Done"].tap()
-        tablesQuery/*@START_MENU_TOKEN@*/.buttons["Objective 2"]/*[[".cells.buttons[\"Objective 2\"]",".buttons[\"Objective 2\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        tablesQuery.tables.staticTexts["Prioritize"].swipeDown()
-        tablesQuery.tables.staticTexts["Analyze"].tap()
+        let endTextView = app.tables.textViews["endTextView"]
+        endTextView.tap()
+        endTextView.typeText("Sample Objective 1 Additional Statement ")
+        app.toolbars["Toolbar"].buttons["Done"].tap()
+        app.tables/*@START_MENU_TOKEN@*/.buttons["Objective 2"]/*[[".cells.buttons[\"Objective 2\"]",".buttons[\"Objective 2\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.tables.tables.staticTexts["Prioritize"].swipeDown()
+        app.tables.tables.staticTexts["Analyze"].tap()
     }
     func testSummative(){
-        app.tables/*@START_MENU_TOKEN@*/.cells.containing(.staticText, identifier:"Restore My Last Saved Lesson Plan")/*[[".cells.containing(.staticText, identifier:\"Browse My Lesson Plan PDFs\")",".cells.containing(.staticText, identifier:\"Get Inspired From Community\")",".cells.containing(.staticText, identifier:\"Restore My Last Saved Lesson Plan\")"],[[[-1,2],[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.children(matching: .other).element.tap()
-        app/*@START_MENU_TOKEN@*/.staticTexts["Save and Continue to Content Standard →"]/*[[".buttons[\"Save and Continue to Content Standard →\"].staticTexts[\"Save and Continue to Content Standard →\"]",".staticTexts[\"Save and Continue to Content Standard →\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        app/*@START_MENU_TOKEN@*/.staticTexts["Save and Continue to Learning Objectives →"]/*[[".buttons[\"Save and Continue to Learning Objectives →\"].staticTexts[\"Save and Continue to Learning Objectives →\"]",".staticTexts[\"Save and Continue to Learning Objectives →\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+//        app.tables/*@START_MENU_TOKEN@*/.cells.containing(.staticText, identifier:"Restore My Last Saved Lesson Plan")/*[[".cells.containing(.staticText, identifier:\"Browse My Lesson Plan PDFs\")",".cells.containing(.staticText, identifier:\"Get Inspired From Community\")",".cells.containing(.staticText, identifier:\"Restore My Last Saved Lesson Plan\")"],[[[-1,2],[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.children(matching: .other).element.tap()
+//        app/*@START_MENU_TOKEN@*/.staticTexts["Save and Continue to Content Standard →"]/*[[".buttons[\"Save and Continue to Content Standard →\"].staticTexts[\"Save and Continue to Content Standard →\"]",".staticTexts[\"Save and Continue to Content Standard →\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+//        app/*@START_MENU_TOKEN@*/.staticTexts["Save and Continue to Learning Objectives →"]/*[[".buttons[\"Save and Continue to Learning Objectives →\"].staticTexts[\"Save and Continue to Learning Objectives →\"]",".staticTexts[\"Save and Continue to Learning Objectives →\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         
         app/*@START_MENU_TOKEN@*/.staticTexts["Save and Continue to Summative Assessment →"]/*[[".buttons[\"Save and Continue to Summative Assessment →\"].staticTexts[\"Save and Continue to Summative Assessment →\"]",".staticTexts[\"Save and Continue to Summative Assessment →\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        let tablesQuery = app.tables
-        let tipStaticText = tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Tip: "]/*[[".cells.staticTexts[\"Tip: \"]",".staticTexts[\"Tip: \"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-        tipStaticText.swipeUp()
-        
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Tip: "]/*[[".cells.staticTexts[\"Tip: \"]",".staticTexts[\"Tip: \"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeUp()
         let summativeTextView = app.tables/*@START_MENU_TOKEN@*/.textViews["SummativeTextView"]/*[[".cells.textViews[\"SummativeTextView\"]",".textViews[\"SummativeTextView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
         summativeTextView.tap()
         summativeTextView.typeText("Sample Summative Statement")
