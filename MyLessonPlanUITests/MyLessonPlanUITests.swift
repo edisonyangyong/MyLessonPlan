@@ -29,24 +29,30 @@ class MyLessonPlanUITests: XCTestCase {
     
     // MARK: View Testing
     func testInfo(){
-        let tablesQuery = app.tables
-        tablesQuery/*@START_MENU_TOKEN@*/.cells.containing(.staticText, identifier:"Restore My Last Saved Lesson Plan")/*[[".cells.containing(.staticText, identifier:\"Browse My Lesson Plan PDFs\")",".cells.containing(.staticText, identifier:\"Get Inspired From Community\")",".cells.containing(.staticText, identifier:\"Restore My Last Saved Lesson Plan\")"],[[[-1,2],[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.children(matching: .other).element.tap()
-        let teachersName = tablesQuery.cells.containing(.staticText, identifier:"Teacher's Name").children(matching: .textView).element
-        teachersName.tap()
-        teachersName.typeText("Edison Yang")
-        tablesQuery.cells.containing(.staticText, identifier:"Grade").children(matching: .textView).element.tap()
+        app.tables/*@START_MENU_TOKEN@*/.otherElements["newCreatView"]/*[[".cells.otherElements[\"newCreatView\"]",".otherElements[\"newCreatView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        let teachersNameTextView = app.tables.textViews["Teacher's Name"]
+        teachersNameTextView.tap()
+        teachersNameTextView.typeText("Edison Yang")
+        app.toolbars["Toolbar"].buttons["Done"].tap()
+        app.tables.textViews["Grade"].tap()
         app/*@START_MENU_TOKEN@*/.pickerWheels["Grade-K"]/*[[".pickers.pickerWheels[\"Grade-K\"]",".pickerWheels[\"Grade-K\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeUp()
-        let doneButton = app.toolbars["Toolbar"].buttons["Done"]
-        doneButton.tap()
-        tablesQuery.cells.containing(.staticText, identifier:"Subject").children(matching: .textView).element.tap()
+        app.toolbars["Toolbar"].buttons["Done"].tap()
+        app.tables.cells.containing(.staticText, identifier:"Subject").textViews["Subject"].tap()
         app.pickerWheels["Social Studies"].swipeDown()
-        doneButton.tap()
-        let lessonTitle = tablesQuery.cells.containing(.staticText, identifier:"Lesson Title").children(matching: .textView).element
-        lessonTitle.tap()
-        lessonTitle.typeText("Sample Title")
-        let email = tablesQuery.cells.containing(.staticText, identifier:"Email").children(matching: .textView).element
-        email.tap()
-        email.typeText("Sample Email")
+        app.toolbars["Toolbar"].buttons["Keyboard"].tap()
+        app/*@START_MENU_TOKEN@*/.keys["space"]/*[[".keyboards.keys[\"space\"]",".keys[\"space\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.keys["t"].tap()
+        app.keys["e"].tap()
+        app.keys["s"].tap()
+        app/*@START_MENU_TOKEN@*/.keys["t"]/*[[".keyboards.keys[\"t\"]",".keys[\"t\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.toolbars["Toolbar"].buttons["Done"].tap()
+        let lessonTitleTextView = app.tables/*@START_MENU_TOKEN@*/.textViews["Lesson Title"]/*[[".cells.textViews[\"Lesson Title\"]",".textViews[\"Lesson Title\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        lessonTitleTextView.tap()
+        lessonTitleTextView.typeText("Sample Lesson Title")
+        app.toolbars["Toolbar"].buttons["Done"].tap()
+        let emailTextView =  app.tables/*@START_MENU_TOKEN@*/.textViews["Email"]/*[[".cells.textViews[\"Email\"]",".textViews[\"Email\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        emailTextView.tap()
+        emailTextView.typeText("Sample Email")
         app.toolbars["Toolbar"].buttons["Done"].tap()
     }
     func testContentStandard(){

@@ -82,6 +82,8 @@ class MainScene: UIView {
         newCreatView.layer.shadowOpacity = 0.9
         newCreatView.layer.shadowColor = UIColor.darkGray.cgColor
         newCreatView.layer.cornerRadius = 4
+        newCreatView.isAccessibilityElement = true
+        newCreatView.accessibilityIdentifier = "newCreatView"
         return newCreatView
     }()
     let newInspireView : UIView = {

@@ -213,10 +213,13 @@ extension InfoViewController:UITableViewDelegate,UITableViewDataSource{
                 }
                 cell.textView.inputView = nil
                 cell.textView.addTwoBarButtons(leftTitle: "Paste", rightTitle: "Done", target: self, leftSelector: #selector(tabPaste), rightSelector: #selector(tapDone))
+                cell.textView.isAccessibilityElement = true
+                cell.textView.accessibilityIdentifier = "Teacher's Name"
             }else if indexPath.row == 5{
                 cell.hintLabel.text = "Grade"
                 cell.textView.inputView = infoScene.picker
                 cell.textView.isAccessibilityElement = true
+                cell.textView.accessibilityIdentifier = "Grade"
                 infoScene.setPickerLayout(view:self.view)
                 cell.textView.tag = 1
                 if dataFlow!.grade == ""{
@@ -230,6 +233,8 @@ extension InfoViewController:UITableViewDelegate,UITableViewDataSource{
             }else if indexPath.row == 6{
                 cell.textView.tag = 2
                 cell.hintLabel.text = "Subject"
+                cell.textView.isAccessibilityElement = true
+                cell.textView.accessibilityIdentifier = "Subject"
                 cell.textView.inputView = infoScene.picker
                 if dataFlow!.subject == ""{
                     cell.textView.textColor = .lightGray
@@ -243,6 +248,7 @@ extension InfoViewController:UITableViewDelegate,UITableViewDataSource{
                 cell.textView.tag = 3
                 cell.hintLabel.text = "Lesson Title"
                 cell.hintLabel.isAccessibilityElement = true
+                cell.textView.accessibilityIdentifier = "Lesson Title"
                 if dataFlow!.lessonTitle == ""{
                     cell.textView.textColor = .lightGray
                     cell.textView.text = "(Required)"
@@ -255,6 +261,8 @@ extension InfoViewController:UITableViewDelegate,UITableViewDataSource{
             }else if indexPath.row == 8{
                 cell.textView.tag = 4
                 cell.hintLabel.text = "Email"
+                cell.hintLabel.isAccessibilityElement = true
+                cell.textView.accessibilityIdentifier = "Email"
                 if dataFlow!.email == ""{
                     cell.textView.textColor = .lightGray
                     cell.textView.text = "(Optional)"
