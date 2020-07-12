@@ -259,6 +259,8 @@ class ContentScene:UIView{
         let temp = 4*sdGap+safeLeft+safeRight
         standardTextView.frame = CGRect(x:sdGap*2+safeLeft+18+15, y: 15, width: view.frame.width-temp-45, height:h)
         standardTextView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: sdFontSize)
+        standardTextView.isAccessibilityElement = true
+        standardTextView.accessibilityIdentifier = "standardTextView"
     }
     func setStepViewLayout(stepNum num:Int, isComplete b:Bool, height h:CGFloat) -> Step{
         let stepView = Step()

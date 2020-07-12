@@ -56,21 +56,17 @@ class MyLessonPlanUITests: XCTestCase {
         app.toolbars["Toolbar"].buttons["Done"].tap()
     }
     func testContentStandard(){
+//        app.tables/*@START_MENU_TOKEN@*/.otherElements["newCreatView"]/*[[".cells.otherElements[\"newCreatView\"]",".otherElements[\"newCreatView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
         app/*@START_MENU_TOKEN@*/.staticTexts["Save and Continue to Content Standard →"]/*[[".buttons[\"Save and Continue to Content Standard →\"].staticTexts[\"Save and Continue to Content Standard →\"]",".staticTexts[\"Save and Continue to Content Standard →\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        let tablesQuery = app.tables
-//        tablesQuery.buttons["Hawai’i State DOE Subject Matter Standards"].tap()
-//        app/*@START_MENU_TOKEN@*/.otherElements["URL"]/*[[".otherElements[\"BrowserView?WebViewProcessID=25831\"]",".otherElements[\"TopBrowserBar\"]",".buttons[\"Address\"]",".otherElements[\"Address\"]",".otherElements[\"URL\"]",".buttons[\"URL\"]"],[[[-1,4],[-1,3],[-1,5,3],[-1,2,3],[-1,1,2],[-1,0,1]],[[-1,4],[-1,3],[-1,5,3],[-1,2,3],[-1,1,2]],[[-1,4],[-1,3],[-1,5,3],[-1,2,3]],[[-1,4],[-1,3]]],[0]]@END_MENU_TOKEN@*/.tap()
-        
-        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Tip: copy the Content Standard\nfrom the following purple link"]/*[[".cells[\"What is Content Standard, Tip: copy the Content Standard\\nfrom the following purple link\"].staticTexts[\"Tip: copy the Content Standard\\nfrom the following purple link\"]",".staticTexts[\"Tip: copy the Content Standard\\nfrom the following purple link\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeUp()
-        
-        let contentStandard = app.tables.cells.containing(.button, identifier:"3").children(matching: .textView).element
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Tip: copy the Content Standard\nfrom the following purple link"]/*[[".cells[\"What is Content Standard, Tip: copy the Content Standard\\nfrom the following purple link\"].staticTexts[\"Tip: copy the Content Standard\\nfrom the following purple link\"]",".staticTexts[\"Tip: copy the Content Standard\\nfrom the following purple link\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeUp()
+        let contentStandard = app.tables/*@START_MENU_TOKEN@*/.textViews["standardTextView"]/*[[".cells.textViews[\"standardTextView\"]",".textViews[\"standardTextView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
         contentStandard.tap()
         app.staticTexts["Done"].tap()
-         contentStandard.tap()
+        contentStandard.tap()
         contentStandard.typeText("Sample Content Standard")
         app.toolbars["Toolbar"].buttons["Done"].tap()
     }
-    
     func testLearningObjective(){
 //        app/*@START_MENU_TOKEN@*/.staticTexts["Continue →"]/*[[".buttons[\"Continue →\"].staticTexts[\"Continue →\"]",".staticTexts[\"Continue →\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
 //        app/*@START_MENU_TOKEN@*/.staticTexts["Save and Continue to Content Standard →"]/*[[".buttons[\"Save and Continue to Content Standard →\"].staticTexts[\"Save and Continue to Content Standard →\"]",".staticTexts[\"Save and Continue to Content Standard →\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
