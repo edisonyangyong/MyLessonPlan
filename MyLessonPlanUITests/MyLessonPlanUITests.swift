@@ -103,6 +103,17 @@ class MyLessonPlanUITests: XCTestCase {
         summativeTextView.typeText("Sample Summative Statement")
         app.toolbars["Toolbar"].buttons["Done"].tap()
     }
+    func testAnticipatorySet(){
+        app.tables/*@START_MENU_TOKEN@*/.otherElements["newCreatView"]/*[[".cells.otherElements[\"newCreatView\"]",".otherElements[\"newCreatView\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        app.tables.children(matching: .cell).element(boundBy: 0).children(matching: .other).element(boundBy: 4).tap()
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Inspire Me"]/*[[".cells",".buttons[\"Inspire Me\"].staticTexts[\"Inspire Me\"]",".staticTexts[\"Inspire Me\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
+        sleep(5)
+        let emergencyCellsQuery = app.tables/*@START_MENU_TOKEN@*/.cells.containing(.staticText, identifier:"Emergency")/*[[".cells.containing(.button, identifier:\"23 Teachers Liked This Idea\")",".cells.containing(.staticText, identifier:\"Tell the students there has been an emergency involving (the content). Someone is spreading rumors to discredit the facts. Teacher has prepared a paragraph ‘news’ statement explaining the ‘proof’ or ‘rumors’ about (the content). Ask the students to work in pairs \/ groups to expose the ‘proof’ or the ‘rumor’ as false. Students may also give their own ‘facts’ about (content), meaning students can give logical facts to the best of their knowledge to use as evidence for their statements.\")",".cells.containing(.staticText, identifier:\"Emergency\")"],[[[-1,2],[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        emergencyCellsQuery.children(matching: .image).element.tap()
+        emergencyCellsQuery.buttons["Insert It Into My Lesson Plan"].tap()
+        app.buttons["Done"].tap()
+    }
 }
 
 extension XCUIElement {
